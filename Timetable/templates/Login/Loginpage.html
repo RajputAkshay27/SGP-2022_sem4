@@ -21,11 +21,12 @@ href = {% static 'Login/style.css' %}>
     <img src= {% static 'Login/Images/avatar.png' %} class="avatar">
 
     <h1>Login here</h1>
-<form method="post" name="Loginform">
+<form method="POST" name="Loginform">
+    {% csrf_token %}
     <p>UserName</p>
-    <input type="text" name="" placeholder="Enter Your UserName" >
+    <input type="text" name="UserName" placeholder="Enter Your UserName" >
     <p>Password</p>
-    <input type="password" name="" placeholder="Enter Your password">
+    <input type="password" name="Password" placeholder="Enter Your password">
     <br>
     <input type="submit" name="" value="Login">
 </form>
