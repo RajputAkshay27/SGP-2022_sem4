@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html><head>
+<title>Login</title>
+
+<link rel="stylesheet" 
+href = {% static 'Login/style.css' %}>
+
+<style>
+    body{
+        background-image: url({% static 'Login/Images/pic5.jpg'%}) ;
+    }
+    </style>
+    
+
+</head>
+<body>
+    
+<div class="loginBox">
+    <img src= {% static 'Login/Images/avatar.png' %} class="avatar">
+
+    <h1>Login here</h1>
+<form method="post" name="Loginform">
+    <p>UserName</p>
+    <input type="text" name="" placeholder="Enter Your UserName" >
+    <p>Password</p>
+    <input type="password" name="" placeholder="Enter Your password">
+    <br>
+    <input type="submit" name="" value="Login">
+</form>
+</div>
+</body></html>
