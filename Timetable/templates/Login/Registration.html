@@ -1,0 +1,115 @@
+{% extends 'Login/header.html' %}
+{% load static %}
+{% block title %}Registration{% endblock title %}
+
+{% block style %}
+<style>
+    body{
+        background-image: url({% static 'Login/Images/pic7.jpg'%}) ;
+    }
+</style>
+{% endblock style %}
+
+{% block content %}
+<script>
+    function ps_show(){
+        var show = document.getElementById('password');
+        if(show.type === 'password'){
+            show.type = 'text';
+        }
+        else{
+            show.type = 'password'
+        }
+    }
+
+    function pass_check(){
+        var password = document.getElementById('password');
+        var x = /^(?=.*\d)(?=.*[@_])[a-zA-Z0-9@_].{8,15}$/;
+        if(password.value.length < 8){
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Should contain atleast 8 characters';
+            return false;
+        }
+        else if(password.value.length > 15){
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Should contain at most 15 characters';
+            return false; 
+        }
+        else if(password.value.match(x)){
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Must constain one uppercase, one lowercase character and one number';
+            return false; 
+        }
+        else{
+            document.getElementById('message').innerHTML = '';
+            check()
+        }
+    }
+
+    function check(){
+        var p1 = document.getElementById('con_password');
+        var p2 = document.getElementById('password');
+        if(p1.value != "" && p2.value != ""){
+            if(p1.value != p2.value){
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML ="** Passwords don`t match";
+                return false;
+            }
+            else{
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML ="password created succesfully";
+                return true;
+            }
+        }
+    }
+</script>
+<br>
+<div class="registrationbox">
+<h2>Create New Account</h2>
+<form method="POST" name="Loginform" onsubmit="return pass_check()">
+{% csrf_token %}
+<label for="fname">First Name </label>
+<br>
+<input type="text" name="fname" required placeholder="Enter your first name" >
+<br>
+<label for="lname">Last Name</label>
+<br>
+<input type="text" name="lname" required placeholder="Enter your Last Name">
+<br>
+<label for="email">Email ID</label>
+<br>
+<input type="email" name="email" id="email" required placeholder="Enter your Email Id">
+<br>
+<label for="username">Username</label>
+<br>
+<input type="text" name="username" id="username" required placeholder="Enter your username">
+<br>
+<label for="password">Password</label>
+<br>
+<input type="password" name="password" id = "password" required onchange="pass_check()" placeholder="Enter your password">
+<br>
+<label for="con_password">Confirm Password</label>
+<br>
+<input type="password" name="con_password" id="con_password" required onchange="pass_check()"   placeholder="Re-enter your password">
+<br>
+<label for="user_type">User Type</label>
+<br>
+<select name="user_type" id="user_type" required>
+    <option value="" selected disabled>Select Type</option>
+    <option value="super user">Super User</option>
+    <option value="normal user">Normal User</option>
+</select>
+<br>
+<label for="show" class="a">show password</label>
+<input type="checkbox" name="show" id="show" onclick="ps_show()">
+<br>
+<span style="color: red;">All fields are required </span>
+<br>
+<span id = "message"></span>
+<br>
+<input type="submit" name="" value="Submit">
+
+</form>
+</div>
+
+{% endblock content %}

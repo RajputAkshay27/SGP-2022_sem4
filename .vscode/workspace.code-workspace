@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\CODING"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "cpp",
+			"iostream": "cpp",
+			"vector": "cpp",
+			"algorithm": "cpp",
+			"bitset": "cpp",
+			"xstring": "cpp",
+			"queue": "cpp",
+			"deque": "cpp",
+			"stack": "cpp",
+			"xutility": "cpp"
+		}
+	}
+}

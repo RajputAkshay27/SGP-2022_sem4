@@ -19,3 +19,6 @@ def home(request):
             return HttpResponse("Bad Credentials")
 
     return render(request,'Login/Loginpage.html')
+
+def register(request):
+    return render(request,'Login/Registration.html')
