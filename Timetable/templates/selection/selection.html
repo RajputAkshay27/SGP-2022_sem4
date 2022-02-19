@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>  
+    <title>Selection Page</title>
+    <link rel="stylesheet" 
+    href = {% static 'selection_module/style.css' %}>
+
+<style>
+    body{
+        background-image: url({% static 'selection_module/Images/pic5.jpg'%}) ;
+    }
+    </style>
+    </head>
+<body>
+    <div class="Design">
+        <h1>Subject Priority Selection</h1><br>
+        <p class="p1">Faculty name:  <input type="text" readonly="readonly" name="Faculty_name_value" value="Bhargavi" class="user"></p> 
+
+            <p class="p1"> Semester:    
+                <select name="Semester" required  class = "c1">
+                <option disabled selected>Semester</option>
+                <option>1st</option>
+                <option>2nd</option>
+            </select>
+         </p><br>
+         
+        <form method="post"  name="Priority">
+
+        <!-- <input type="text" readonly="readonly" value="Priority-1" class="S1"> -->
+        <p class="p2">Priority 1
+        <select name="subject priority" required>
+            <option disabled selected>Theory subject</option>
+            <option>sub1</option>
+            <option>sub2</option>
+         </select>
+
+         <select name="Practical1" required>
+            <option disabled selected>Practical subject</option>
+            <option>sub1</option>
+            <option>sub2</option>
+         </select>
+        </p>
+         <br>
+
+         <!-- <input type="text" readonly="readonly" value="Priority-2" class="S1"> -->
+        <p class="p2">Priority 2
+        <select name="subject priority" required>
+            <option disabled selected>Theory subject</option>
+            <option>sub1</option>
+            <option>sub2</option>
+         </select>
+         <select name="Practical1" required>
+            <option disabled selected>Practical subject</option>
+            <option>sub1</option>
+            <option>sub2</option>
+         </select>
+        </p>
+         <br>
+
+         <!-- <input type="text" readonly="readonly" value="Priority-3" class="S1"> -->
+         <p class="p2">Priority 3
+        <select name="subject priority" required>
+            <option disabled selected>Theory subject</option>
+            <option>sub1</option>
+            <option>sub2</option>
+         </select>
+         <select name="Practical1" required>
+            <option disabled selected>Practical subject</option>
+            <option>sub1</option>
+            <option>sub2</option>
+         </select>
+        </p>
+        <p><br>    
+            <input type="submit" value="Submit" disabled>
+            <input type="reset" value="Reset">
+        </p>
+    </div>
+
+</form>
+</body>
+</html>

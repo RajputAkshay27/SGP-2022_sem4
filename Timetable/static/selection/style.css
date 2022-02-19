@@ -1,0 +1,78 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Design{
+    width: fit-content;
+    height: 620px;
+    box-sizing: border-box;
+    background: #0B172A;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 45px;
+    padding-top: 30px;
+    margin: 1%;
+    transform: translate(25%,10%);
+}
+
+
+input [type = text]{
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-bottom: white;
+    color: white;
+    border: none;
+}
+.p1{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Calibri;
+    color: white;
+}
+
+.p2{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Calibri;
+    color: white;
+}
+
+.c1{
+    margin-left: 57px;
+}
+
+.user{
+    margin-left: 25px;
+    font-size: 18px;
+    font-family: Calibri;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    text-align: center;
+    background: transparent;
+    color: white;
+}
+.S1{
+    width: 100px;
+    height: 20px;
+    margin-right: 25px;
+    font-size: 16px;
+    font-family: Calibri;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+select{
+    width: max-content;
+    height: 25px;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+h1{
+    font-family: Calibri;
+    text-align: center;
+    size: 25px;
+    color: white;
+}
