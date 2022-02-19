@@ -1,8 +1,8 @@
-from django.contrib.auth import  authenticate, login
-from django.contrib.auth.models import User
-from django.http import HttpResponse
-from django.shortcuts import render
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.http import HttpResponse, HttpResponseForbidden
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -22,7 +22,7 @@ def home(request):
                 return HttpResponse("correct Credentials")
         else:
             return HttpResponse("Bad Credentials")
-
+    
     return render(request,'Login/Loginpage.html')
 
 def register(request):
@@ -48,5 +48,8 @@ def register(request):
             
             newuser.save()
             messages.success(request,"New User has been added.")
-        
-    return render(request,'Login/Registration.html')
+    if request.method == 'GET':   
+        if request.user.is_staff:                    
+            return render(request,'Login/Registration.html')
+        else:
+            return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login as super user to access this page.</h1>")
