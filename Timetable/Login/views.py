@@ -1,6 +1,8 @@
 from django.contrib.auth import  authenticate, login
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib import messages
 
 # Create your views here.
 
@@ -13,12 +15,38 @@ def home(request):
         user = authenticate(username = username,password=password)
 
         if user is not None:
-            login(request , user)
-            return HttpResponse("correct Credentials")
+            login(request, user)
+            if user.is_staff:
+                return HttpResponse("Super User")
+            else:
+                return HttpResponse("correct Credentials")
         else:
             return HttpResponse("Bad Credentials")
 
     return render(request,'Login/Loginpage.html')
 
 def register(request):
+    
+    if request.method == 'POST':
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        Email = request.POST['email']
+        password = request.POST['password']
+        username = request.POST['username']
+        user_type = request.POST['user_type']
+        if User.objects.filter(username=username):
+            messages.error(request,'Username already exist.')   
+        elif User.objects.filter(email=Email):
+            messages.error(request,'Email already exists')
+        else:
+            if user_type == 'super user':
+                newuser = User.objects.create_superuser(username,Email,password)
+            else:
+                newuser = User.objects.create_user(username,Email,password)  
+            newuser.first_name = fname
+            newuser.last_name = lname
+            
+            newuser.save()
+            messages.success(request,"New User has been added.")
+        
     return render(request,'Login/Registration.html')
