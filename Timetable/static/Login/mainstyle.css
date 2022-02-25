@@ -1,26 +1,4 @@
-.box{
-    width: 100%;
-    height: 140px;
-    background: #000;
-    color: #fff;
-    box-sizing: border-box;
-    padding:  15px;
-    }
-    a{
-        color: aliceblue;
-        font-size: 27px;
-        font-style: oblique;
-        text-align: center;
-    }
-    .avatar{
-        width: 100px;
-        height: 100px;
-        position:static;
-    }
-    th{
-        padding-right: 33px;
-    }
-        
+   
     .registrationbox{
         width: 550px;
         background: #fff;

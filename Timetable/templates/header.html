@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href = {% static 'header.css' %}>
         {% block style_sheet %}{% endblock style_sheet %}
         {% block style %}{% endblock style %}
         <title>{% block title %}{% endblock title %}</title>
@@ -11,13 +12,14 @@
             <table>
                 <tr>
                     <th> <img src= {% static 'Login/Images/avatar.png' %} class="avatar"></th>
+                    <th><a href="">Select Priority</a></th>
                     <th><a href="">Priority List</a></th>
                     <th><a href="">Create User</a></th>
-                    <th><a href="">Final Faculty List</a></th>
-                    <th><a href="">View Timetables</a></th>
+                    <th><a href="">Assign Facuilty</a></th>
                     <th><a href="">Create Timetables</a></th>
-                    <th><a href="">Contact</a></th>
+                    <th><a href="">Edit Timetables</a></th>
                     <th><a href="">Contact us</a></th>
+                    <th><a href="">Logout</a></th>
                 </tr>
             </table>
         </div>
