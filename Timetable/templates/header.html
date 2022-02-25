@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href = {% static 'Login/mainstyle.css' %}> 
+        {% block style_sheet %}{% endblock style_sheet %}
         {% block style %}{% endblock style %}
         <title>{% block title %}{% endblock title %}</title>
     </head>
