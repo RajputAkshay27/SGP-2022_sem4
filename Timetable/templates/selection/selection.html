@@ -1,18 +1,18 @@
+{% extends 'header.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>  
-    <title>Selection Page</title>
-    <link rel="stylesheet" 
-    href = {% static 'selection_module/style.css' %}>
+{% block title %}Priority Selection{% endblock title %}
 
+{% block style_sheet %}<link rel="stylesheet" href = {% static 'selection/style.css' %}> {% endblock style_sheet %}
+
+{% block style %}
 <style>
     body{
-        background-image: url({% static 'selection_module/Images/pic5.jpg'%}) ;
+        background-image: url({% static 'selection/Images/bg1.jpeg'%}) ;
     }
-    </style>
-    </head>
-<body>
+</style>
+{% endblock style %}   
+   
+{% block content %}
     <div class="Design">
         <h1>Subject Priority Selection</h1><br>
         <p class="p1">Faculty name:  <input type="text" readonly="readonly" name="Faculty_name_value" value="Bhargavi" class="user"></p> 
@@ -41,7 +41,7 @@
             <option>sub2</option>
          </select>
         </p>
-         <br>
+        <br>
 
          <!-- <input type="text" readonly="readonly" value="Priority-2" class="S1"> -->
         <p class="p2">Priority 2
@@ -78,5 +78,4 @@
     </div>
 
 </form>
-</body>
-</html>
+{% endblock content %}

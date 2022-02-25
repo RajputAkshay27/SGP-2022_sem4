@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('selection', views.selection, name='Selectionpage')
+    path('priority', views.selection, name='Selectionpage')
 ]
