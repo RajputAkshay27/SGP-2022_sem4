@@ -53,3 +53,6 @@ def register(request):
             return render(request,'Login/Registration.html')
         else:
             return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login as super user to access this page.</h1>")
+
+def index(request):
+    return render(request,'Homepage.html')
