@@ -1,21 +1,20 @@
 .homepage{
-    width: 50%;
-    background: #fff;
+    background: lightblue;
     color: #000;
-    margin-top: 2%;
-    margin-left: 34%;
-    margin-right: 34%;
-    position:relative;
     box-sizing: border-box;
-    padding: 5px 35px;
+    width: 450px;
+    margin-top: 300px;
+    margin-left: 10px
+    /* padding: 10px 55px; */
 }
 
 .S2{
-    width: 100px;
-    height: 20px;
-    margin-right: 25px;
-    font-size: 16px;
+    margin-right:0px;
+    font-size: 25px;
     font-family: Calibri;
-    margin-bottom: 25px;
-    margin-top: 100px;
+    font-style: italic;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    border: 3px solid green;
 }
