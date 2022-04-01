@@ -1,11 +1,9 @@
-from pickle import TRUE
-from re import T
 from django.db import models
 
 # Create your models here.
 
 class faculty(models.Model):
-    fac_code = models.CharField(max_length=7,primary_key=TRUE)
+    fac_code = models.CharField(max_length=7,primary_key=True)
     fac_name = models.CharField(max_length=25)
 
     def __str__(self):

@@ -24,13 +24,18 @@
     <label for="Subject">Subject</label>
     <select name="Subject" id="Subject" required>
         <option value="" disabled selected>None</option>
-        <option value="DBMS">DBMS</option>
-        <option value="DCN">DCN</option>
-        <option value="MCO">MCO</option>
+        {% for sub in subs %}
+        <option value='{{sub.name}}'>{{sub.name}}</option>
+        {% endfor %}
     </select>
     <br>
     <label for="">Faculty :</label>
     <br>
+    {% for f in fac  %}
+        <label for="{{f.name}}">{{f.name}}</label>
+        <input type="checkbox" name="{{f.name}}" id="{{f.name}}">
+        <br>  
+    {% endfor %}
     <label for="1">DRK</label>
     <input type="checkbox" name="DRK" id="1">
     <br>
