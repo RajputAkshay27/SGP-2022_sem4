@@ -8,4 +8,14 @@
     position:relative;
     box-sizing: border-box;
     padding: 5px 35px;
-    }
+}
+
+.S2{
+    width: 100px;
+    height: 20px;
+    margin-right: 25px;
+    font-size: 16px;
+    font-family: Calibri;
+    margin-bottom: 25px;
+    margin-top: 100px;
+}
