@@ -1,0 +1,40 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block title %}Faculty Allocation{% endblock title %}
+
+{% block style_sheet %}<link rel="stylesheet" href = {% static 'faculty_allocation/style.css' %}> {% endblock style_sheet %}
+
+{% block style %}{% endblock style %}
+
+{% block content %}
+<div class="allocationblock">
+<form method="POST" name="faculty allocation">
+{% csrf_token %}
+<div class="fac_allocation">
+    <h1>Allocate Faculty</h1>
+    <label for="Semester">Semester</label>
+    <select name="Semester" id="semester" required>
+        <option value="" disabled selected>None</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+    <br>
+    <label for="Subject">Subject</label>
+    <select name="Subject" id="Subject" required>
+        <option value="" disabled selected>None</option>
+        <option value="DBMS">DBMS</option>
+        <option value="DCN">DCN</option>
+        <option value="MCO">MCO</option>
+    </select>
+    <br>
+    <label for="">Faculty :</label>
+    <br>
+    <label for="1">DRK</label>
+    <input type="checkbox" name="DRK" id="1">
+    <br>
+    <input type="submit" value="Submit">
+</div>
+
+{% endblock content %}
