@@ -5,5 +5,7 @@ from selection.models import subject,faculty
 
 def fac_alloc(request):
     subs = subject.objects.all()
-    fac = subject.objects.all()
-    return render(request,'faculty_allocation/facalloction.html',{'sub':subs,'fac':fac})
+    fac = faculty.objects.all()
+    Allocated_fac = request.POST.get('Faculty',False)
+    
+    return render(request,'faculty_allocation/facalloction.html',{"sub":subs ,"fac":fac})

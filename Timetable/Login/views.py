@@ -1,8 +1,8 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseForbidden
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 # Create your views here.
 
@@ -56,3 +56,8 @@ def register(request):
 
 def index(request):
     return render(request,'Homepage.html')
+
+def logout_user(request):
+        logout(request)
+        return redirect('/login')
+    

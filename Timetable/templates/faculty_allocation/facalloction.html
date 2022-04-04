@@ -24,21 +24,18 @@
     <label for="Subject">Subject</label>
     <select name="Subject" id="Subject" required>
         <option value="" disabled selected>None</option>
-        {% for sub in subs %}
-        <option value='{{sub.name}}'>{{sub.name}}</option>
+        {% for s in sub %}
+        <option value="{{s}}">{{s}}</option>
         {% endfor %}
     </select>
     <br>
-    <label for="">Faculty :</label>
-    <br>
-    {% for f in fac  %}
-        <label for="{{f.name}}">{{f.name}}</label>
-        <input type="checkbox" name="{{f.name}}" id="{{f.name}}">
-        <br>  
-    {% endfor %}
-    <label for="1">DRK</label>
-    <input type="checkbox" name="DRK" id="1">
-    <br>
+    <label for="Faculty">Faculty :</label>
+    <select name="Faculty" id="Faculty" required multiple>
+        <option value="" disabled selected>None</option>
+        {% for f in fac %}
+        <option value='{{f}}'>{{f}}</option>
+        {% endfor %}
+    </select>
     <input type="submit" value="Submit">
 </div>
 
