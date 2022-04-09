@@ -14,7 +14,7 @@ class subject(models.Model):
     sub_name = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.sub_code
+        return self.sub_name
 
 
 class resource(models.Model):
@@ -23,11 +23,15 @@ class resource(models.Model):
 
     def __str__(self):
         return self.room_no
-
-
-# class priority(models.Model):
-#     semester = models.IntegerField(max_length=2)
-#     fac_code = models.CharField(max_length=7)
     
 
+class priority(models.Model):
+    semester = models.IntegerField()
+    fac_code = models.ForeignKey(faculty,to_field='fac_code',on_delete=models.CASCADE)
+    Theory_Priority1 = models.CharField(max_length=10)
+    Practical_Priority1 = models.CharField(max_length=10)
+    Theory_Priority2 = models.CharField(max_length=10)
+    Practical_Priority2 = models.CharField(max_length=10)
+    Theory_Priority3 = models.CharField(max_length=10)
+    Practical_Priority3 = models.CharField(max_length=10)
     

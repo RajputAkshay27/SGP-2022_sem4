@@ -21,6 +21,13 @@
         <option value="4">4</option>
     </select>
     <br>
+    <label for="lec_type">Lecture Type</label>
+    <select name="lec_type" id="lec_type" required>
+        <option value="" disabled selected>None</option>
+        <option value="Lecture">Lecture</option>
+        <option value="Lab">Lab</option>
+    </select>
+    <br>
     <label for="Subject">Subject</label>
     <select name="Subject" id="Subject" required>
         <option value="" disabled selected>None</option>
@@ -33,7 +40,7 @@
     <select name="Faculty" id="Faculty" required multiple>
         <option value="" disabled selected>None</option>
         {% for f in fac %}
-        <option value='{{f}}'>{{f}}</option>
+        <option value="{{f}}">{{f}}</option>
         {% endfor %}
     </select>
     <input type="submit" value="Submit">
