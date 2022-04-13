@@ -15,65 +15,66 @@
 {% block content %}
     <div class="Design">
         <h1>Subject Priority Selection</h1><br>
-        <p class="p1">Faculty name:  <input type="text" readonly="readonly" name="Faculty_name_value" value="Bhargavi" class="user"></p> 
+        <p class="p1">Faculty name:  <input type="text" readonly="readonly" name="Faculty_name_value" value="{{name}}" class="user"></p> 
 
             <p class="p1"> Semester:    
                 <select name="Semester" required  class = "c1">
                 <option disabled selected>Semester</option>
-                <option>1st</option>
-                <option>2nd</option>
+                {% for s in sem %}
+                <option value="{{s}}">{{s}}</option>
+                {% endfor %}
             </select>
          </p><br>
          
         <form method="post"  name="Priority">
-
-        <!-- <input type="text" readonly="readonly" value="Priority-1" class="S1"> -->
         <p class="p2">Priority 1
-        <select name="subject priority" required>
+        <select name="subjectPriority1" required>
             <option disabled selected>Theory subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
 
          <select name="Practical1" required>
             <option disabled selected>Practical subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
         </p>
         <br>
 
-         <!-- <input type="text" readonly="readonly" value="Priority-2" class="S1"> -->
         <p class="p2">Priority 2
-        <select name="subject priority" required>
+        <select name="subjectPriority3" required>
             <option disabled selected>Theory subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
-         <select name="Practical1" required>
+         <select name="Practical2" required>
             <option disabled selected>Practical subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
         </p>
          <br>
-
-         <!-- <input type="text" readonly="readonly" value="Priority-3" class="S1"> -->
          <p class="p2">Priority 3
-        <select name="subject priority" required>
+        <select name="subjectPriority3" required>
             <option disabled selected>Theory subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
-         <select name="Practical1" required>
+         <select name="Practical3" required>
             <option disabled selected>Practical subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
         </p>
         <p><br>    
             <input type="submit" value="Submit" disabled>
-            <input type="reset" value="Reset">
         </p>
     </div>
 

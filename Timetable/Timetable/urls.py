@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('faculty_allocation.urls')),
     path('',include('Login.urls')),
-    path('',include('selection.urls'))
+    path('',include('selection.urls')),
+    path('',include('ttgenerator.urls'))
 ]

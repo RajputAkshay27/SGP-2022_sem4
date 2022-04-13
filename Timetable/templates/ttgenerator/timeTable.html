@@ -1,0 +1,101 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block title %}Home Page{% endblock title %}
+
+{% block style_sheet %}<link rel="stylesheet" href = {% static 'ttgenerator/timeTable.css' %}> {% endblock style_sheet %}
+
+{% block style %}
+<style>
+    
+</style>
+{% endblock style %}
+
+{% block content %}
+<div class='TimeTable'>
+  <div class="timetable">
+    <div class="week-names">
+      <div>monday</div>
+      <div>tuesday</div>
+      <div>wednesday</div>
+      <div>thursday</div>
+      <div>friday</div>
+      <div class="weekend">saturday</div>
+    </div>
+    <div class="time-interval">
+      <div>9:10 - 10:10</div>
+      <div>10:10 - 11:10</div>
+      <div>12:10 - 01:10</div>
+      <div>01:10 - 02:10</div>
+      <div>02:20 - 03:20</div>
+      <div>03:20 - 03:20</div>
+    </div>
+    <div class="content">
+      <div>
+      </div>
+      <div>
+          <table class="data">
+              <tr>
+                  <th>1</th>
+              </tr>
+              <tr>
+                  <th>2</th>
+              </tr>
+              <tr>
+                  <th>3</th>
+              </tr>
+          </table>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div class="weekend"></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="weekend"></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="weekend"></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="weekend"></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="weekend"></div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
