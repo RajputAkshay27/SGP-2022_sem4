@@ -6,3 +6,4 @@ from .models import faculty, subject, resource
 admin.site.register(faculty)
 admin.site.register(subject)
 admin.site.register(resource)
+

@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'Login',
     'selection',
+    'faculty_allocation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'SGP_2',
         'USER': 'postgres',
-        'PASSWORD': 'Mamess@1301',
+        'PASSWORD': '271001',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -127,7 +128,6 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR/  "static",
-    '/var/www/static/',
 ]
 
 # Default primary key field type
