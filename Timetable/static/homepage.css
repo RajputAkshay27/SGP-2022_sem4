@@ -1,19 +1,28 @@
 body{
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
 }
 
 .homepage{
-    background: lightblue;
+    /* background: rgb(67, 140, 165); */
     color: #000;
     box-sizing: border-box;
     width: 450px;
-    margin-top: 300px;
+    /* margin-top: 100px; */
     margin-left: 10px
     /* padding: 10px 55px; */
 }
 
 .S2{
+    font-size: 25px;
+    font-family: Calibri;
+    font-style: italic;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+
+.S3{
     font-size: 25px;
     font-family: Calibri;
     font-style: italic;

@@ -56,13 +56,13 @@ def register(request):
             return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login as super user to access this page.</h1>")
 
 def index(request):
-    if request.user.is_authenticated:
-        if is_TTcommitte(request.user):
+    # if request.user.is_authenticated:
+    #     if is_TTcommitte(request.user):
             return render(request,"homepage.html")
-        else:
-            return render(request,'n_userhome.html')
-    else:
-            return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login first.</h1>")
+    #     else:
+    #         return render(request,'n_userhome.html')
+    # else:
+    #         return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login first.</h1>")
 
 def logout_user(request):
         logout(request)
