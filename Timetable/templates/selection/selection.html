@@ -17,42 +17,55 @@
         <h1>Subject Priority Selection</h1><br>
         <p class="p1">Faculty name:  <input type="text" readonly="readonly" name="Faculty_name_value" value="{{name}}" class="user"></p> 
 
+             <p class="p1">Faculty code
+                <select name="Faculty_code_value" required>
+                    <option value='' disabled selected>Faculty codes</option>
+                    {% for f in subs %}
+                        <option value="{{f}}"> {{f}} </option>
+                    {% endfor %}
+                 </select>
             <p class="p1"> Semester:    
-                <select name="Semester" required  class = "c1">
-                <option disabled selected>Semester</option>
-                {% for s in sem %}
-                <option value="{{s}}">{{s}}</option>
-                {% endfor %}
-            </select>
+            <select name="sem_value" required  class = "c1">
+                <option value='' disabled selected>Semester</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                </select>
          </p><br>
          
         <form method="post"  name="Priority">
+            {% csrf_token %}
         <p class="p2">Priority 1
         <select name="subjectPriority1" required>
-            <option disabled selected>Theory subject</option>
+            <option value='' disabled selected>Theory subject</option>
             {% for s in subs %}
-                <option value="{{s}}">{{s}}</option>
+                <option value="{{s}}"> {{s}} </option>
             {% endfor %}
          </select>
 
          <select name="Practical1" required>
-            <option disabled selected>Practical subject</option>
-            {% for s in subs %}
-                <option value="{{s}}">{{s}}</option>
+            <option value='' disabled selected>Practical subject</option>
+            {% for s1 in subs %}
+                <option value="{{s1}}">{{s1}}</option>
             {% endfor %}
          </select>
         </p>
         <br>
 
         <p class="p2">Priority 2
-        <select name="subjectPriority3" required>
-            <option disabled selected>Theory subject</option>
+        <select name="subSelect2">
+            <option value='a' disabled required selected>Theory subject</option>
             {% for s in subs %}
                 <option value="{{s}}">{{s}}</option>
             {% endfor %}
          </select>
-         <select name="Practical2" required>
-            <option disabled selected>Practical subject</option>
+         <select name="Practical2">
+            <option value='a' disabled selected>Practical subject</option>
             {% for s in subs %}
                 <option value="{{s}}">{{s}}</option>
             {% endfor %}
@@ -60,13 +73,13 @@
         </p>
          <br>
          <p class="p2">Priority 3
-        <select name="subjectPriority3" required>
-            <option disabled selected>Theory subject</option>
+        <select name="subjectPriority3">
+            <option value='a' disabled selected>Theory subject</option>
             {% for s in subs %}
                 <option value="{{s}}">{{s}}</option>
             {% endfor %}
          </select>
-         <select name="Practical3" required>
+         <select value='a' name="Practical3">
             <option disabled selected>Practical subject</option>
             {% for s in subs %}
                 <option value="{{s}}">{{s}}</option>
@@ -74,7 +87,7 @@
          </select>
         </p>
         <p><br>    
-            <input type="submit" value="Submit" disabled>
+            <input type="submit" value="Submit">
         </p>
     </div>
 

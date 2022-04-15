@@ -1,6 +1,6 @@
-from genericpath import exists
-from django.shortcuts import  render
-from selection.models import subject,faculty
+from django.shortcuts import render
+from selection.models import faculty, subject
+
 from .models import faculty_alloc
 
 # Create your views here.
@@ -23,4 +23,4 @@ def fac_alloc(request):
                 print("data already exists")
         return render(request,'faculty_allocation/facalloction.html',{"sub":subs ,"fac":fac_op})
     else:
-        return render(request,'faculty_allocation/facalloction.html',{"sub":subs ,"fac":fac})
+        return render(request,'faculty_allocation/facalloction.html',{"sub":subs ,"fac":fac_op})
