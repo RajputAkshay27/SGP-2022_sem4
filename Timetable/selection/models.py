@@ -30,8 +30,8 @@ class priority(models.Model):
     fac_code = models.ForeignKey(faculty,to_field='fac_code',on_delete=models.CASCADE)
     Theory_Priority1 = models.CharField(max_length=10)
     Practical_Priority1 = models.CharField(max_length=10)
-    Theory_Priority2 = models.CharField(max_length=10)
-    Practical_Priority2 = models.CharField(max_length=10)
-    Theory_Priority3 = models.CharField(max_length=10)
-    Practical_Priority3 = models.CharField(max_length=10)
+    Theory_Priority2 = models.CharField(max_length=10,null=True)
+    Practical_Priority2 = models.CharField(max_length=10,null=True)
+    Theory_Priority3 = models.CharField(max_length=10,null=True)
+    Practical_Priority3 = models.CharField(max_length=10,null=True)
     

@@ -15,65 +15,79 @@
 {% block content %}
     <div class="Design">
         <h1>Subject Priority Selection</h1><br>
-        <p class="p1">Faculty name:  <input type="text" readonly="readonly" name="Faculty_name_value" value="Bhargavi" class="user"></p> 
+        <p class="p1">Faculty name:  <input type="text" readonly="readonly" name="Faculty_name_value" value="{{name}}" class="user"></p> 
 
+             <p class="p1">Faculty code
+                <select name="Faculty_code_value" required>
+                    <option value='' disabled selected>Faculty codes</option>
+                    {% for f in subs %}
+                        <option value="{{f}}"> {{f}} </option>
+                    {% endfor %}
+                 </select>
             <p class="p1"> Semester:    
-                <select name="Semester" required  class = "c1">
-                <option disabled selected>Semester</option>
-                <option>1st</option>
-                <option>2nd</option>
-            </select>
+            <select name="sem_value" required  class = "c1">
+                <option value='' disabled selected>Semester</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                </select>
          </p><br>
          
         <form method="post"  name="Priority">
-
-        <!-- <input type="text" readonly="readonly" value="Priority-1" class="S1"> -->
+            {% csrf_token %}
         <p class="p2">Priority 1
-        <select name="subject priority" required>
-            <option disabled selected>Theory subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+        <select name="subjectPriority1" required>
+            <option value='' disabled selected>Theory subject</option>
+            {% for s in subs %}
+                <option value="{{s}}"> {{s}} </option>
+            {% endfor %}
          </select>
 
          <select name="Practical1" required>
-            <option disabled selected>Practical subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            <option value='' disabled selected>Practical subject</option>
+            {% for s1 in subs %}
+                <option value="{{s1}}">{{s1}}</option>
+            {% endfor %}
          </select>
         </p>
         <br>
 
-         <!-- <input type="text" readonly="readonly" value="Priority-2" class="S1"> -->
         <p class="p2">Priority 2
-        <select name="subject priority" required>
-            <option disabled selected>Theory subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+        <select name="subSelect2">
+            <option value='a' disabled required selected>Theory subject</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
-         <select name="Practical1" required>
-            <option disabled selected>Practical subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+         <select name="Practical2">
+            <option value='a' disabled selected>Practical subject</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
         </p>
          <br>
-
-         <!-- <input type="text" readonly="readonly" value="Priority-3" class="S1"> -->
          <p class="p2">Priority 3
-        <select name="subject priority" required>
-            <option disabled selected>Theory subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+        <select name="subjectPriority3">
+            <option value='a' disabled selected>Theory subject</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
-         <select name="Practical1" required>
+         <select value='a' name="Practical3">
             <option disabled selected>Practical subject</option>
-            <option>sub1</option>
-            <option>sub2</option>
+            {% for s in subs %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
          </select>
         </p>
         <p><br>    
-            <input type="submit" value="Submit" disabled>
-            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
         </p>
     </div>
 
