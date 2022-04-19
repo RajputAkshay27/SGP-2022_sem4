@@ -1,6 +1,6 @@
 {% extends 'header.html' %}
 {% load static %}
-{% block title %}Edit TimeTable{% endblock title %}
+{% block title %}View TimeTable{% endblock title %}
 
 {% block style_sheet %}<link rel="stylesheet" href = {% static 'ttgenerator/timeTable.css' %}> {% endblock style_sheet %}
 
@@ -96,74 +96,6 @@
       <div class="weekend"></div>
     </div>
   </div>
-
-    <div class = 'ttbox'>
-        <form method="POST" name="timeTable">
-            {% csrf_token %}
-
-            <label for="sem">Semester</label>
-  <select name="sem" id="sem" required>
-      <option value="" disabled selected>None</option>
-      {% for s in sem %}
-      <option value="{{s}}">{{s}}</option>
-      {% endfor %}
-  </select>
-  <br>
-  <label for="timeslot">Time Slot</label>
-  <select name="timeslot" id="timeslot" required>
-      <option value="" disabled selected>None</option>
-      {% for ts in tslot %}
-      <option value="{{ts}}">{{ts}}</option>
-      {% endfor %}
-  </select>
-
-  <br>
-  <label for="day">Day</label>
-  <select name="day" id="day" required>
-      <option value="" disabled selected>None</option>
-      {% for d in day %}
-      <option value="{{d}}">{{d}}</option>
-      {% endfor %}
-  </select>
-  <br>
-
-  <label for="type">TYPE</label>
-  <select name="type" id="type" required>
-      <option value="" disabled selected>None</option>
-      <option value="Lab" >Lab</option>
-      <option value="Lecture" >Lecture</option>
-  </select>
-  <br>
-
-
-  <label for="room">ROOM</label>
-  <select name="room" id="room" required>
-      <option value="" disabled selected>None</option>
-      {% for r in room %}
-      <option value="{{r}}">{{r}}</option>
-      {% endfor %}
-  </select>
-  <br>
-
-  <label for="subject">Subject</label>
-  <select name="subject" id="subject" required>
-      <option value="" disabled selected>None</option>
-      {% for s in subs %}
-      <option value="{{s}}">{{s}}</option>
-      {% endfor %}
-  </select>
-  <br>
-
-  <label for="faculty">Faculty</label>
-  <select name="faculty" id="faculty" required>
-      <option value="" disabled selected>None</option>
-      {% for f in facultys %}{% endfor %}
-      <option value="{{f}}">{{f}}</option>
-  </select>
-  <br>
-  <input type="submit" name="" value="Submit">
-        </form>
-    </div>  
 
 </div>
 {% endblock content %}
