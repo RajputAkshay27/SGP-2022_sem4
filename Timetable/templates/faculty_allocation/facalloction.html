@@ -4,7 +4,13 @@
 
 {% block style_sheet %}<link rel="stylesheet" href = {% static 'faculty_allocation/style.css' %}> {% endblock style_sheet %}
 
-{% block style %}{% endblock style %}
+{% block style %}
+<style>
+    body{
+        background-image: url({% static 'bg1.jpg'%});
+    }
+</style>
+{% endblock style %}
 
 {% block content %}
 <div class="allocationblock">
