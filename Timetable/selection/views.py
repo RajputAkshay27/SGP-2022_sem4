@@ -8,24 +8,24 @@ from Login.views import is_TTcommitte
 def selection(request):
     name = request.user.first_name
     facultyCode = faculty.objects.all()
+    subs = subject.objects.all()
     if request.method == "POST":
-        # semester = request.POST['sem_value'] 
-        sp1 = request.POST['subjectPriority1']
+        semester = request.POST['sem_value'] 
+        sp1 = request.POST['subSelect1']
         sp2 = request.POST['subSelect2']
-        sp3 = request.POST['subjectPriority1']
-        pp1 = request.POST['Practical2']
-        pp2 = request.POST['Practical2']
-        pp3 = request.POST['Practical2']
+        sp3 = request.POST['subSelect3']
+        pp1 = request.POST['pracSelect1']
+        pp2 = request.POST['pracSelect2']
+        pp3 = request.POST['pracSelect3']
 
         
-        temp = request.POST.getlist('Faculty_code_value')
-        print(sp2)
+        temp = request.POST['Faculty_code_value']
         f_code = faculty.objects.get(fac_code = temp)
     
         
         
         data = priority()
-        # data.semester = semester
+        data.semester = semester
         data.fac_code = f_code
         data.Theory_Priority1 = sp1
         data.Theory_Priority2 = sp2
@@ -36,12 +36,20 @@ def selection(request):
         
         try: 
             data.save()
+            str = "Data has been saved successfully"
         except:
-            print('some error occured')
+            str ='some error occured'
+        
+        if is_TTcommitte(request.user):
+            return render (request, 'selection/selection.html',{"name":name,"subs":subs,'fac':facultyCode,'str':str})
+        else:
+            return render (request, 'selection/n_select.html',{"name":name,"subs":subs,'fac':facultyCode,'str':str})
         
     else:
-        subs = subject.objects.all()
-        return render (request, 'selection/selection.html',{"name":name,"subs":subs,'fac':facultyCode})
+        if is_TTcommitte(request.user):
+            return render (request, 'selection/selection.html',{"name":name,"subs":subs,'fac':facultyCode})
+        else:
+            return render (request, 'selection/n_select.html',{"name":name,"subs":subs,'fac':facultyCode})
 
 def exportExcel(request):
     if is_TTcommitte(request.user):

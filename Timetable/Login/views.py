@@ -23,7 +23,9 @@ def home(request):
     return render(request,'Login/Loginpage.html')
 
 def register(request):
-    
+    sti = ''
+    uSti = ''
+    eSti = '' 
     if request.method == 'POST':
         fname = request.POST['fname']
         lname = request.POST['lname']
@@ -32,9 +34,9 @@ def register(request):
         username = request.POST['username']
         user_type = request.POST['user_type']
         if User.objects.filter(username=username):
-            messages.error(request,'Username already exist.')   
+            uSti = "Username already exits"  
         elif User.objects.filter(email=Email):
-            messages.error(request,'Email already exists')
+            eSti = "Email already exits.\n please use different email address"
         else:
             if user_type == 'super user':
                 newuser = User.objects.create_user(username,Email,password)
@@ -46,23 +48,29 @@ def register(request):
                 u_group.user_set.add(newuser)
             newuser.first_name = fname
             newuser.last_name = lname
-            
-            newuser.save()
-            messages.success(request,"New User has been added.")
-    if request.method == 'GET':   
+            try:
+                newuser.save()
+                sti = "New User has been added."
+            except:
+                sti = "New user could not be added"
+        if sti == '' and uSti == '' and eSti == '':
+            return redirect('/home')
+        else:
+            return render(request,'Login/Registration.html')
+    else:      
         if is_TTcommitte(request.user):                    
             return render(request,'Login/Registration.html')
         else:
             return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login as super user to access this page.</h1>")
 
 def index(request):
-    # if request.user.is_authenticated:
-    #     if is_TTcommitte(request.user):
+    if request.user.is_authenticated:
+        if is_TTcommitte(request.user):
             return render(request,"homepage.html")
-    #     else:
-    #         return render(request,'n_userhome.html')
-    # else:
-    #         return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login first.</h1>")
+        else:
+            return render(request,'n_userhome.html')
+    else:
+            return HttpResponseForbidden("<h1> 403 Forbidden <br> Please login first.</h1>")
 
 def logout_user(request):
         logout(request)
